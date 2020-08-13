@@ -9,19 +9,24 @@ export class InicioPage implements OnInit {
 
   componentes: Componente[] =[
     {
-      icon: 'american-football',
+      icon: 'barcode-outline',
       name: 'Action Sheet',
       redirectTo: '/action-sheet'      
     },
     {
-      icon: 'football',
+      icon: 'sunny-outline',
       name: 'Alert',
       redirectTo: '/alert'      
     },
     {
-      icon: 'beaker',
+      icon: 'person-outline',
       name: 'Avatar',
       redirectTo: '/avatar'      
+    },
+    {
+      icon: 'radio-button-on',
+      name: 'Botones y Router',
+      redirectTo: '/botones'      
     }
   ];
 
