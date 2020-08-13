@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-alert',
@@ -7,9 +8,84 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertPage implements OnInit {
 
-  constructor() { }
+  titulo:string;
+
+  constructor( public alertCtrl: AlertController ) {  }
 
   ngOnInit() {
+  }
+
+  async presentInput(){
+    const input = await this.alertCtrl.create({
+      header : 'Input',
+      subHeader : 'Ingrese su nombre: ',
+      inputs: [
+        {
+          name: 'txtNombre',
+          type: 'text',
+          placeholder: 'Nombre'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'rojo',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Ok',
+          handler: ( data ) => {
+            console.log('Confirm Ok',data);
+            this.titulo=data.txtNombre;
+          }
+        }
+      ]      
+    });
+    await input.present();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'rojo',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async presentAlertPrompt() {
+    const alert = await this.alertCtrl.create({
+      cssClass: 'my-custom-class',
+      header: 'Prompt!',
+      inputs: [
+        {
+          name: 'name1',
+          type: 'text',
+          placeholder: 'Placeholder 1'
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

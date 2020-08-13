@@ -1,5 +1,19 @@
-<app-header titulo="AlertPage"></app-header>
+<app-header [titulo]="titulo || 'Alert Page'"></app-header>
 
 <ion-content>
-<h1>este es alert page</h1>
+
+    <ion-button 
+        expand="full"
+        color="primary" 
+        (click)= "presentAlert()">
+        Mostrar Alerta
+    </ion-button>
+
+    <ion-button 
+        expand="full"
+        color="secondary" 
+        (click)= "presentInput()">
+        Mostrar Input
+    </ion-button>
+
 </ion-content>
