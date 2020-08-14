@@ -46,6 +46,10 @@ const routes: Routes = [
     path: 'grid',
     loadChildren: () => import('./pages/grid/grid.module').then( m => m.GridPageModule)
   },
+  {
+    path: 'infiniti-scroll',
+    loadChildren: () => import('./pages/infiniti-scroll/infiniti-scroll.module').then( m => m.InfinitiScrollPageModule)
+  },
 
 
 ];
