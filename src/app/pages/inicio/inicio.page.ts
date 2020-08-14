@@ -28,6 +28,12 @@ export class InicioPage implements OnInit {
       name: 'Botones y Router',
       redirectTo: '/botones'      
     }
+    ,
+    {
+      icon: 'document-text-outline',
+      name: 'Cartas',
+      redirectTo: '/card'      
+    }
   ];
 
   constructor() { }
