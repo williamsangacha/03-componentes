@@ -42,13 +42,18 @@ export class InicioPage implements OnInit {
       icon: 'calendar',
       name: 'Date Time',
       redirectTo: '/date-time'      
-    }
-    ,
+    },
     {
       icon: 'car',
       name: 'Fabs',
       redirectTo: '/fab'      
+    },
+    {
+      icon: 'grid',
+      name: 'Grid-Rows',
+      redirectTo: '/grid'      
     }
+    
   ];
 
   constructor() { }
