@@ -27,12 +27,16 @@ export class InicioPage implements OnInit {
       icon: 'radio-button-on',
       name: 'Botones y Router',
       redirectTo: '/botones'      
-    }
-    ,
+    },
     {
       icon: 'document-text-outline',
       name: 'Cartas',
       redirectTo: '/card'      
+    },
+    {
+      icon: 'checkmark-circle-outline',
+      name: 'Check',
+      redirectTo: '/check'      
     }
   ];
 
