@@ -14,9 +14,9 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let c of componentes"
+    <ion-item *ngFor="let c of componentes |async"
       [routerLink]="c.redirectTo" detail>
-      <ion-icon slot="start" [name]="c.icon" ></ion-icon>
+      <ion-icon slot="start" [name]="c.icon" color="primary"></ion-icon>
       <ion-label> <h1>{{c.name}}</h1> </ion-label>
     </ion-item>
   </ion-list>
