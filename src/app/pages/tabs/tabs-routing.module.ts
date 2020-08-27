@@ -15,15 +15,18 @@ const routes: Routes = [
     children:[
       {
         path:'account',
-        loadChildren: '../avatar/avatar.module#AvatarPageModule'
+        // loadChildren: '../avatar/avatar.module#AvatarPageModule'
+        loadChildren: () => import('../avatar/avatar.module').then(m => m.AvatarPageModule)
       },
       {
         path:'contact',
-        loadChildren: '../lista/lista.module#ListaPageModule'
+        // loadChildren: '../lista/lista.module#ListaPageModule'
+        loadChildren: () => import('../lista/lista.module').then(m => m.ListaPageModule)
       },
       {
         path:'settings',
-        loadChildren: '../infiniti-scroll/infiniti-scroll.module#InfinitiScrollPageModule'
+        // loadChildren: '../infiniti-scroll/infiniti-scroll.module#InfinitiScrollPageModule'
+        loadChildren: () => import('../infiniti-scroll/infiniti-scroll.module').then(m => m.InfinitiScrollPageModule)
       },
     ]
   }
